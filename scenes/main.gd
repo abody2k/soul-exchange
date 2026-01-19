@@ -37,11 +37,13 @@ func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"start":
 			$CanvasLayer/CHAT.visible=true
-			pass
 		"second":
-			pass
+			$CharacterBody3D2/AnimationPlayer.stop()
+			$AnimationPlayer.play("third")
+			$CharacterBody3D/AnimationPlayer.play("hero_blocking")
+			$CharacterBody3D2/AnimationPlayer.play("reaper_blocking")
 		"third":
-			pass
+			$CanvasLayer/CHAT.visible=true
 	pass 
 
 
@@ -51,6 +53,7 @@ func dialog(number):
 	match number:
 		1:
 			$AnimationPlayer.play("second")
+			$CharacterBody3D2/AnimationPlayer.play("reaper_attack")
 		2:
-			$AnimationPlayer.play("third")
+			get_tree().call_group("player","start_the_game")
 	pass

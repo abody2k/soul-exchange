@@ -42,6 +42,11 @@ func _physics_process(delta):
 
 
 
+func start_the_game():
+	playable = true
+	$SpringArm3D/Camera3D.current = true
+	pass
+
 func _input(event):
 	if not playable:
 		return
