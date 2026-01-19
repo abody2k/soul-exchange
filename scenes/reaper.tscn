@@ -973,7 +973,9 @@ _data = {
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_8603b"]
 
-[node name="reaper" type="CharacterBody3D"]
+[node name="reaper" type="CharacterBody3D" groups=["player"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_01fq5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -1172,3 +1174,8 @@ billboard = 1
 texture = SubResource("Texture2DRD_8603b")
 region_enabled = true
 region_rect = Rect2(-390.7682, 48.378677, 1090.7682, 651.62134)
+
+[node name="Timer" type="Timer" parent="." groups=["player"]]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
