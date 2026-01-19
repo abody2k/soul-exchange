@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://r4cf5o50ld1h"]
+[gd_scene load_steps=17 format=4 uid="uid://r4cf5o50ld1h"]
 
 [ext_resource type="Texture2D" uid="uid://erc1kaa2dj8k" path="res://3D/world_Material_1.png" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://gsux0isp5d4r" path="res://3D/clouds.png" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://f0i3f6dpdyi" path="res://scenes/hero.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dg3fa54qp5pq8" path="res://scenes/reaper.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://btda10p64rinm" path="res://3D/world_Material_4.png" id="5_ya4ey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6wxe"]
@@ -130,3 +131,6 @@ environment = SubResource("Environment_tefeu")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_jyhfs")]
 transform = Transform3D(0.17247927, 0, -0.9850131, 0, 1, 0, 0.9850131, 0, 0.17247927, -56.10306, 24.203766, -138.45479)
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.177773, 5.3542285, -154.63315)
