@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://dg3fa54qp5pq8"]
+[gd_scene load_steps=17 format=4 uid="uid://dg3fa54qp5pq8"]
 
+[ext_resource type="Script" uid="uid://yluxqj30g7rt" path="res://scenes/reaper.gd" id="1_01fq5"]
 [ext_resource type="Texture2D" uid="uid://cdde7bh2cbqxf" path="res://3D/reaper_reaper_BaseColor.png" id="1_8603b"]
 [ext_resource type="Texture2D" uid="uid://dcbdcqmy15ax8" path="res://3D/reaper_Material_4.png" id="4_2gvjm"]
 
@@ -970,7 +971,10 @@ _data = {
 &"reaper_throwing": SubResource("Animation_2apa4")
 }
 
+[sub_resource type="Texture2DRD" id="Texture2DRD_8603b"]
+
 [node name="reaper" type="CharacterBody3D"]
+script = ExtResource("1_01fq5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0738525, 0)
@@ -1161,3 +1165,10 @@ skin = SubResource("Skin_ehffs")
 libraries = {
 &"": SubResource("AnimationLibrary_5yrye")
 }
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.233093, 0)
+billboard = 1
+texture = SubResource("Texture2DRD_8603b")
+region_enabled = true
+region_rect = Rect2(-390.7682, 48.378677, 1090.7682, 651.62134)
