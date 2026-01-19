@@ -480,6 +480,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Resume"
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="button_down" from="CanvasLayer/Control/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control2/Button3" to="." method="_on_button_2_button_down"]
