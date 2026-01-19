@@ -49,3 +49,8 @@ func _input(event):
 func _on_button_button_down():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass # Replace with function body.
+
+
+func _on_button_2_button_down():
+	get_tree().quit(0)
+	pass # Replace with function body.

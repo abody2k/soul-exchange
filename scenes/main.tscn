@@ -455,6 +455,7 @@ offset_bottom = 72.895996
 text = "Exit"
 
 [connection signal="button_down" from="CanvasLayer/Control/Button" to="CharacterBody3D" method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Button2" to="CharacterBody3D" method="_on_button_2_button_down"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D2"]
