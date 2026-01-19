@@ -4,13 +4,16 @@ extends CharacterBody3D
 const SPEED = 20.0
 const JUMP_VELOCITY = 4.5
 
+var playable= false
+
 
 func _ready():
 	
 	pass
 
 func _physics_process(delta):
-	
+	if not playable:
+		return
 	# Add the gravity.
 	#if not is_on_floor():
 	velocity = get_gravity() 
@@ -40,6 +43,9 @@ func _physics_process(delta):
 
 
 func _input(event):
+	if not playable:
+		return
+		
 	if event is InputEventMouseMotion:
 		$SpringArm3D.rotate_y(0.07  * -clamp( (event as InputEventMouseMotion).relative.x,-1,1)) 
 		$SpringArm3D/Camera3D.rotate_x(0.07  * -clamp( (event as InputEventMouseMotion).relative.y,-1,1)) 

@@ -42,4 +42,15 @@ func _on_animation_player_animation_finished(anim_name):
 			pass
 		"third":
 			pass
-	pass # Replace with function body.
+	pass 
+
+
+
+
+func dialog(number):
+	match number:
+		1:
+			$AnimationPlayer.play("second")
+		2:
+			$AnimationPlayer.play("third")
+	pass

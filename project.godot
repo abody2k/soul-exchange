@@ -15,6 +15,10 @@ run/main_scene="uid://r4cf5o50ld1h"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+controller=""
+
 [input]
 
 forward={
