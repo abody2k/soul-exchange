@@ -102,6 +102,7 @@ background_mode = 2
 sky = SubResource("Sky_tbgi4")
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7720413, 0.3005829, 1.5468445)
 
 [node name="Circle_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(120, 0, 0, 0, 120, 0, 0, 0, 120, -69.59004, 1.0554333, -154.98425)
