@@ -36,6 +36,7 @@ func _on_animation_player_animation_finished(anim_name):
 	
 	match anim_name:
 		"start":
+			$CanvasLayer/CHAT.visible=true
 			pass
 		"second":
 			pass
