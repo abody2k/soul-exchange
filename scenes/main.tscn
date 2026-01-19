@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=4 uid="uid://r4cf5o50ld1h"]
+[gd_scene load_steps=27 format=4 uid="uid://r4cf5o50ld1h"]
 
+[ext_resource type="Script" uid="uid://bku81jrcytp7n" path="res://scenes/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://erc1kaa2dj8k" path="res://3D/world_Material_1.png" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://gsux0isp5d4r" path="res://3D/clouds.png" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://f0i3f6dpdyi" path="res://scenes/hero.tscn" id="4_jyhfs"]
@@ -359,6 +360,7 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_o6xl0")
 
 [node name="Circle_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(120, 0, 0, 0, 120, 0, 0, 0, 120, -69.59004, 1.0554333, -154.98425)
@@ -454,8 +456,34 @@ offset_right = 37.135998
 offset_bottom = 72.895996
 text = "Exit"
 
-[connection signal="button_down" from="CanvasLayer/Control/Button" to="CharacterBody3D" method="_on_button_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Button2" to="CharacterBody3D" method="_on_button_2_button_down"]
+[node name="Control2" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.032
+anchor_bottom = 0.048
+offset_left = 37.0
+offset_top = 73.0
+offset_right = 72.72
+offset_bottom = 102.08
+text = "Exit"
+
+[node name="resume" type="Button" parent="CanvasLayer/Control2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Resume"
+
+[connection signal="button_down" from="CanvasLayer/Control/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control2/Button3" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control2/resume" to="." method="_on_resume_button_down"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D2"]
