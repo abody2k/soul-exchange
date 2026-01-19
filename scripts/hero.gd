@@ -31,7 +31,7 @@ func _physics_process(delta):
 	
 	if input_dir and is_on_floor():
 		$AnimationPlayer.play("hero_moving")
-		velocity += $Armature_003.basis.z * -input_dir * SPEED
+		velocity += $Armature_003.basis.x * -input_dir * SPEED
 		
 	else:
 		$AnimationPlayer.play("hero_idle")

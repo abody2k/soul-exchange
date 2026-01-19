@@ -15,13 +15,13 @@ func _process(delta):
 	if Input.is_action_just_pressed('action') and visible:
 		current_index+=1
 		if current_index >= dialogs.size():
+			$Panel/RichTextLabel.text = ""
 			visible=false
 			if not final_dialog:
 				get_tree().call_group("controller","dialog",1)
 			else:
 				get_tree().call_group("controller","dialog",2)
 			current_index = -1
-
 			final_dialog = true                   
 			dialogs = ["YOU : OH WOW! My dog almost got hit, wow, what do you think you are doing grimreaper?",
 "GRIM REAPER : I'm doing my job, homie.

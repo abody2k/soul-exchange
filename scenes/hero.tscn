@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=4 uid="uid://f0i3f6dpdyi"]
+[gd_scene load_steps=15 format=4 uid="uid://f0i3f6dpdyi"]
 
-[ext_resource type="PackedScene" uid="uid://bsyd1otm0ropx" path="res://3D/hero.glb" id="1_mo806"]
 [ext_resource type="Script" uid="uid://d3x8fs74hvtrl" path="res://scripts/hero.gd" id="1_mv13s"]
 [ext_resource type="Texture2D" uid="uid://tiei8df1c6kk" path="res://3D/hero_Material_1.png" id="1_y2sko"]
 [ext_resource type="Texture2D" uid="uid://gicifjnmuqxs" path="res://3D/hero_Material_4.png" id="4_txblw"]
@@ -495,8 +494,6 @@ _data = {
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_mv13s")
-
-[node name="hero" parent="." instance=ExtResource("1_mo806")]
 
 [node name="Armature_003" type="Node3D" parent="."]
 
