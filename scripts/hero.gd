@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 
 func _ready():
 	
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pass
 
 func _physics_process(delta):
 	
@@ -44,3 +44,8 @@ func _input(event):
 		$SpringArm3D.rotate_y(0.07  * -clamp( (event as InputEventMouseMotion).relative.x,-1,1)) 
 		$SpringArm3D/Camera3D.rotate_x(0.07  * -clamp( (event as InputEventMouseMotion).relative.y,-1,1)) 
 		$SpringArm3D/Camera3D.rotation_degrees.x = clamp($SpringArm3D/Camera3D.rotation_degrees.x,-47,6.9)
+
+
+func _on_button_button_down():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	pass # Replace with function body.
