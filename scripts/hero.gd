@@ -32,7 +32,10 @@ func _physics_process(delta):
 	velocity = get_gravity() 
 	
 	if Input.is_action_just_pressed("action"):
+		print("HEYYYYYYYYYY")
 		$AnimationPlayer.play("hero_attack")
+		$BoneAttachment3D/Area3D.monitoring = true
+		$BoneAttachment3D2/Area3D.monitoring = true
 		$Timer.start()
 		return
 
@@ -50,7 +53,7 @@ func _physics_process(delta):
 		$AnimationPlayer.play("hero_moving")
 		velocity += $Armature_003.basis.x * -input_dir * SPEED
 		
-	else:
+	elif not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play("hero_idle")
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -76,16 +79,13 @@ func _input(event):
 
 
 func _on_area_3d_body_entered(body):
-	print("hello")
-	pass # Replace with function body.
+	body.take_damage()
 
 
-func _on_timer_timeout():
-	$Armature_003/Area3D.monitoring = true
-	$Timer2.start()
-	pass # Replace with function body.
 
 
-func _on_timer_2_timeout():
-	$Armature_003/Area3D.monitoring = false
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "hero_attack":
+		$BoneAttachment3D/Area3D.monitoring = false
+		$BoneAttachment3D2/Area3D.monitoring = false
 	pass # Replace with function body.

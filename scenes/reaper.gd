@@ -7,7 +7,7 @@ var mode : MODES = MODES.WANDERING
 
 
 func take_damge():
-	hp -= 20
+	hp -= 10
 	pass
 
 
