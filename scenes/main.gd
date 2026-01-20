@@ -51,6 +51,7 @@ func _on_animation_player_animation_finished(anim_name):
 func dialog(number):
 	match number:
 		1:
+			
 			$AnimationPlayer.play("second")
 			$CharacterBody3D2/AnimationPlayer.play("reaper_attack")
 		2:

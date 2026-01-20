@@ -11,8 +11,10 @@ func take_damge():
 	hp -= 10
 	$CanvasLayer/Control/ProgressBar.value -=10
 	if $CanvasLayer/Control/ProgressBar.value <=0:
-		pass
-	pass
+		playable = false
+		rotation_degrees.y= 182.7
+		position = Vector3(-75.217,5.354,-163.865)
+		$AnimationPlayer.play("reaper_throwing")
 
 
 const SPEED = 5.0
@@ -24,6 +26,7 @@ var playable = false
 func start_the_game():
 	playable = true
 	$CanvasLayer/Control.visible = true
+	
 
 	
 	
