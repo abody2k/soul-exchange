@@ -28,6 +28,8 @@ func _physics_process(delta):
 
 	match mode:
 		MODES.WANDERING:
+			if position.distance_to(random_pos) < 1:
+				_on_timer_timeout()
 			look_at(random_pos)
 			velocity = -basis.z * 40
 			move_and_slide()
