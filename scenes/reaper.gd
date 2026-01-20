@@ -34,11 +34,9 @@ func _physics_process(delta):
 			velocity = -basis.z * 40
 			move_and_slide()
 			$AnimationPlayer.play("reaper_moving")
-			print("wandering")
 
 			
 		MODES.ATTACKING:
-			print("attacking")
 			look_at(enemy.position)
 			if position.distance_to(enemy.position) > 10:
 				velocity = -basis.z * 60
@@ -46,6 +44,7 @@ func _physics_process(delta):
 				
 			else:
 				mode = MODES.ATTACKED
+				$BoneAttachment3D/Area3D.monitoring = true
 				$AnimationPlayer.play("reaper_attack")
 				
 
@@ -64,4 +63,10 @@ func _on_timer_timeout():
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "reaper_attack":
+		$BoneAttachment3D/Area3D.monitoring = false
 		mode = MODES.WANDERING
+
+
+func _on_area_3d_body_entered(body):
+	print("JUST ATTACKED SOMEBODY")
+	pass # Replace with function body.
