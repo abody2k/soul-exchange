@@ -36,7 +36,6 @@ func _physics_process(delta):
 		$AnimationPlayer.play("hero_attack")
 		$BoneAttachment3D/Area3D.monitoring = true
 		$BoneAttachment3D2/Area3D.monitoring = true
-		$Timer.start()
 		return
 
 	# Get the input direction and handle the movement/deceleration.
@@ -79,7 +78,7 @@ func _input(event):
 
 
 func _on_area_3d_body_entered(body):
-	body.take_damage()
+	body.take_damge()
 
 
 

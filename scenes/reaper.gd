@@ -7,7 +7,11 @@ var mode : MODES = MODES.WANDERING
 
 
 func take_damge():
+	
 	hp -= 10
+	$CanvasLayer/Control/ProgressBar.value -=10
+	if $CanvasLayer/Control/ProgressBar.value <=0:
+		pass
 	pass
 
 
