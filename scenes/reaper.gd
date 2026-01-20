@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-enum MODES{WANDERING,ATTACKING}
+enum MODES{WANDERING,ATTACKING,ATTACKED}
 var hp = 1000
 var mode : MODES = MODES.WANDERING
 
@@ -25,26 +25,41 @@ func start_the_game():
 func _physics_process(delta):
 	if  !playable:
 		return
-	print(mode)	
+
 	match mode:
 		MODES.WANDERING:
 			look_at(random_pos)
-			velocity = basis.x * 40
+			velocity = -basis.z * 40
 			move_and_slide()
 			$AnimationPlayer.play("reaper_moving")
-			print("looks")
-			print(random_pos)
+			print("wandering")
+
 			
 		MODES.ATTACKING:
-			
-			#look_at(enemy.position)
-			pass
+			print("attacking")
+			look_at(enemy.position)
+			if position.distance_to(enemy.position) > 10:
+				velocity = -basis.z * 60
+				move_and_slide()
+				
+			else:
+				mode = MODES.ATTACKED
+				$AnimationPlayer.play("reaper_attack")
+				
 
 
 func _on_timer_timeout():
+	if mode == MODES.ATTACKED or mode ==MODES.ATTACKING:
+		return
+		
 	mode = randi_range(0,1) as MODES
 	match mode:
 		MODES.WANDERING:
 			random_pos = Vector3(randf_range(-116.649,-15.009),randf_range(0,20),randf_range(-208.496,-108.682)) 
 		MODES.ATTACKING:
 			pass
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "reaper_attack":
+		mode = MODES.WANDERING

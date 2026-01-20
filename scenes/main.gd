@@ -1,9 +1,8 @@
 extends Node3D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(Vector3(-71.1, 5.36, -153.3).distance_to(Vector3(-55.17,5.354, -154.6)))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
