@@ -44,6 +44,7 @@ func _on_animation_player_animation_finished(anim_name):
 		"third":
 			$CanvasLayer/CHAT.visible=true
 		"last":
+			
 			get_tree().reload_current_scene()
 	pass 
 
@@ -51,6 +52,7 @@ func _on_animation_player_animation_finished(anim_name):
 func play_end():
 	$AnimationPlayer.speed_scale = 0.1
 	$AnimationPlayer.play("last")
+	$end.play()
 	$Timer.start()
 
 func dialog(number):

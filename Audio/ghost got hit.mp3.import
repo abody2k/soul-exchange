@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djwfmyqna1vms"
+path="res://.godot/imported/ghost got hit.mp3-e0b050d1a069a24031b10e2f1199ab4c.mp3str"
+
+[deps]
+
+source_file="res://Audio/ghost got hit.mp3"
+dest_files=["res://.godot/imported/ghost got hit.mp3-e0b050d1a069a24031b10e2f1199ab4c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

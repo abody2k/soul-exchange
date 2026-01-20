@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csrutv0r4ihx4"
+path="res://.godot/imported/old way.mp3-f39acf8cdf6183f0ebe9f79fc81c4f24.mp3str"
+
+[deps]
+
+source_file="res://Audio/old way.mp3"
+dest_files=["res://.godot/imported/old way.mp3-f39acf8cdf6183f0ebe9f79fc81c4f24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

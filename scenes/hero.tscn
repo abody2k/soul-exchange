@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://f0i3f6dpdyi"]
+[gd_scene load_steps=19 format=4 uid="uid://f0i3f6dpdyi"]
 
 [ext_resource type="Script" uid="uid://d3x8fs74hvtrl" path="res://scripts/hero.gd" id="1_mv13s"]
 [ext_resource type="Texture2D" uid="uid://tiei8df1c6kk" path="res://3D/hero_Material_1.png" id="1_y2sko"]
+[ext_resource type="AudioStream" uid="uid://bohyy1qqncavb" path="res://Audio/hit.mp3" id="4_mv13s"]
 [ext_resource type="Texture2D" uid="uid://gicifjnmuqxs" path="res://3D/hero_Material_4.png" id="4_txblw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7jrr"]
@@ -686,6 +687,9 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoneAttachment3D2/Area3D"]
 shape = SubResource("SphereShape3D_mv13s")
+
+[node name="end2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mv13s")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

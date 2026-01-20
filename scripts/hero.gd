@@ -78,6 +78,7 @@ func _input(event):
 
 
 func _on_area_3d_body_entered(body):
+	$end2.play()
 	body.take_damge()
 
 
