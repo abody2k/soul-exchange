@@ -11,6 +11,11 @@ var hp = 100
 func take_damage(damage):
 	hp -= damage
 	
+	if hp <= 0:
+		
+		get_tree().reload_current_scene()
+		pass
+	
 
 func _ready():
 	
