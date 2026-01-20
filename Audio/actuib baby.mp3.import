@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kwg41v4fpip5"
+path="res://.godot/imported/actuib baby.mp3-fd3242bc5a07f14eb920d958c6c2dcee.mp3str"
+
+[deps]
+
+source_file="res://Audio/actuib baby.mp3"
+dest_files=["res://.godot/imported/actuib baby.mp3-fd3242bc5a07f14eb920d958c6c2dcee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

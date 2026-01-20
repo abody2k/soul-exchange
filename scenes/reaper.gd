@@ -2,18 +2,22 @@ extends CharacterBody3D
 
 
 enum MODES{WANDERING,ATTACKING,ATTACKED}
-var hp = 1000
+var hp = 100
 var mode : MODES = MODES.WANDERING
 
 
 func take_damge():
 	
 	hp -= 10
-	$CanvasLayer/Control/ProgressBar.value -=10
-	if $CanvasLayer/Control/ProgressBar.value <=0:
+	$CanvasLayer/Control/ProgressBar.value = hp
+	if hp <=0:
 		playable = false
+		position = Vector3(-75.217,5.354,-151.021)
 		rotation_degrees.y= 182.7
-		position = Vector3(-75.217,5.354,-163.865)
+		rotation_degrees.x=6.9
+		rotation_degrees.z=0
+		get_tree().call_group("controller","play_end")
+		
 		$AnimationPlayer.play("reaper_throwing")
 
 

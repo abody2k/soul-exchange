@@ -43,10 +43,15 @@ func _on_animation_player_animation_finished(anim_name):
 			$CharacterBody3D2/AnimationPlayer.play("reaper_blocking")
 		"third":
 			$CanvasLayer/CHAT.visible=true
+		"last":
+			get_tree().reload_current_scene()
 	pass 
 
 
-
+func play_end():
+	$AnimationPlayer.speed_scale = 0.1
+	$AnimationPlayer.play("last")
+	$Timer.start()
 
 func dialog(number):
 	match number:
@@ -57,3 +62,8 @@ func dialog(number):
 		2:
 			get_tree().call_group("player","start_the_game")
 	pass
+
+
+func _on_timer_timeout():
+	$AnimationPlayer.speed_scale = 1
+	pass # Replace with function body.
