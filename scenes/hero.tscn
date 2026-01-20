@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://f0i3f6dpdyi"]
+[gd_scene load_steps=18 format=4 uid="uid://f0i3f6dpdyi"]
 
 [ext_resource type="Script" uid="uid://d3x8fs74hvtrl" path="res://scripts/hero.gd" id="1_mv13s"]
 [ext_resource type="Texture2D" uid="uid://tiei8df1c6kk" path="res://3D/hero_Material_1.png" id="1_y2sko"]
@@ -495,6 +495,12 @@ _data = {
 &"hero_moving": SubResource("Animation_j0a6c")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06baw"]
+bg_color = Color(0.3415883, 0.0009649253, 0.8442731, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv13s"]
+bg_color = Color(0.9784059, 0.33728924, 0.4962511, 1)
+
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 7
@@ -640,6 +646,29 @@ one_shot = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.266
+anchor_bottom = 0.042000003
+offset_right = -0.43200684
+offset_bottom = -0.21600151
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_06baw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mv13s")
+value = 100.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Armature_003/Area3D" to="." method="_on_area_3d_body_entered"]
