@@ -13,7 +13,9 @@ func take_damage(damage):
 	
 	if hp <= 0:
 		hp = 0
+		$CanvasLayer/Control/ProgressBar.value = hp
 		get_tree().reload_current_scene()
+		return
 		
 	$CanvasLayer/Control/ProgressBar.value = hp
 	
@@ -59,6 +61,7 @@ func _physics_process(delta):
 
 func start_the_game():
 	playable = true
+	$CanvasLayer/Control.visible = true
 	$SpringArm3D/Camera3D.current = true
 	pass
 

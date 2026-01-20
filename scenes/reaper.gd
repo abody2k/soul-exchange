@@ -19,6 +19,7 @@ var playable = false
 
 func start_the_game():
 	playable = true
+	$CanvasLayer/Control.visible = true
 
 	
 	

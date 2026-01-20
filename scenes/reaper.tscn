@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dg3fa54qp5pq8"]
+[gd_scene load_steps=22 format=4 uid="uid://dg3fa54qp5pq8"]
 
 [ext_resource type="Script" uid="uid://yluxqj30g7rt" path="res://scenes/reaper.gd" id="1_01fq5"]
 [ext_resource type="Texture2D" uid="uid://fv2dwv5puxgq" path="res://reaper_reaper_BaseColor.png" id="3_mgqsx"]
@@ -981,6 +981,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8603b"]
+bg_color = Color(0.5378604, 0, 0.16112545, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01fq5"]
+bg_color = Color(0.18784249, 0.00044354892, 0.41038117, 1)
+
 [node name="reaper" type="CharacterBody3D" groups=["player"]]
 collision_layer = 4
 collision_mask = 3
@@ -1209,6 +1215,31 @@ skin = SubResource("Skin_p04ry")
 [node name="sword_l_009" type="MeshInstance3D" parent="Armature_002/Skeleton3D"]
 mesh = SubResource("ArrayMesh_2208f")
 skin = SubResource("Skin_p04ry")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.266
+anchor_bottom = 0.042000003
+offset_left = 832.0
+offset_right = 831.568
+offset_bottom = -0.21600151
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_8603b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_01fq5")
+value = 100.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
