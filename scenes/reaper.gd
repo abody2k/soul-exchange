@@ -15,6 +15,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var random_pos = Vector3.ZERO
 var playable = false
+@export var enemy : CharacterBody3D 
 
 func start_the_game():
 	playable = true
@@ -35,6 +36,8 @@ func _physics_process(delta):
 			print(random_pos)
 			
 		MODES.ATTACKING:
+			
+			#look_at(enemy.position)
 			pass
 
 
@@ -42,6 +45,6 @@ func _on_timer_timeout():
 	mode = randi_range(0,1) as MODES
 	match mode:
 		MODES.WANDERING:
-			random_pos = Vector3(randf_range(-118.502,-15.082),randf_range(0,20),randf_range(-223.625,-94.116)) 
+			random_pos = Vector3(randf_range(-116.649,-15.009),randf_range(0,20),randf_range(-208.496,-108.682)) 
 		MODES.ATTACKING:
 			pass
